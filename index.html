@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Mentor IA Global — Atendimento Inteligente via WhatsApp para Clínicas</title>
 <meta name="description" content="Atendimento automático 24h via WhatsApp com Inteligência Artificial para clínicas, consultórios e profissionais da saúde. Agende, confirme e organize sua agenda sem sobrecarregar a recepção.">
+<link rel="icon" type="image/png" href="assets/logo-mentor-ia-global.png">
+<link rel="apple-touch-icon" href="assets/logo-mentor-ia-global.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -40,11 +42,12 @@
   .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 17px; white-space: nowrap; color: #FFFFFF; }
   .brand:hover { color: #FFFFFF; }
   .brand-mark {
-    width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
-    background: linear-gradient(135deg,#3ECF8E,#1F9E68);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 16px -4px rgba(62,207,142,.45);
+    width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+    background: #FFFFFF; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 2px;
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,.6);
   }
+  .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .navlinks { display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #A1A1A1; }
   .navlinks a:hover { color: #3ECF8E; }
   .nav-cta {
@@ -435,6 +438,55 @@
   .appt-n { font-size: 10.5px; color: #EDEDED; font-weight: 600; }
   .appt-p { font-size: 9px; color: #6B6B6B; }
   .appt-t { font-size: 10.5px; color: #3ECF8E; font-weight: 700; white-space: nowrap; }
+  .panel-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .panel-chips i {
+    font-style: normal; font-size: 10px; color: #8A8A8A; background: #141414;
+    border: 1px solid #262626; border-radius: 999px; padding: 5px 11px; white-space: nowrap;
+  }
+  .panel-chips i.on { background: #3ECF8E; color: #062616; font-weight: 700; border-color: #3ECF8E; }
+  .kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+  .kcol { background: #0E0E0E; border: 1px solid #232323; border-radius: 10px; padding: 9px; min-width: 0; }
+  .kcol-h { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+  .kcol-h span { font-size: 9.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+  .kcol-h b { font-size: 9px; font-weight: 700; color: #6B6B6B; background: #1A1A1A; border-radius: 999px; padding: 2px 7px; }
+  .kcard { background: #161616; border: 1px solid #262626; border-radius: 8px; padding: 8px 9px; margin-bottom: 6px; }
+  .kcard u { display: block; text-decoration: none; font-size: 10px; font-weight: 700; color: #EDEDED; line-height: 1.25; }
+  .kcard s { display: block; text-decoration: none; font-size: 8.5px; color: #6B6B6B; margin-top: 3px; }
+  .kcard em { font-style: normal; display: inline-block; font-size: 8px; font-weight: 700; border-radius: 999px; padding: 2px 6px; margin-top: 5px; }
+  .jstep { background: #141414; border: 1px solid #232323; border-radius: 9px; padding: 9px 11px; margin-bottom: 6px; }
+  .jstep-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .jstep-top b { font-family: 'Sora', Arial, sans-serif; font-size: 16px; color: #FFFFFF; }
+  .jstep-top span { font-size: 9.5px; color: #8A8A8A; font-weight: 700; }
+  .jstep-l { font-size: 9.5px; color: #6B6B6B; margin-top: 1px; }
+  .jstep-bar { height: 4px; border-radius: 999px; background: #1F1F1F; margin-top: 7px; overflow: hidden; }
+  .jstep-bar u { display: block; height: 100%; text-decoration: none; background: linear-gradient(90deg,#1F9E68,#3ECF8E); }
+  .jarrow { text-align: center; font-size: 10px; color: #3ECF8E; margin: -2px 0 4px; }
+  .ptable { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  .ptable th {
+    text-align: left; font-size: 8.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    color: #5C5C5C; padding: 7px 8px; border-bottom: 1px solid #232323; white-space: nowrap;
+  }
+  .ptable td { font-size: 10px; color: #C4C4C4; padding: 8px; border-bottom: 1px solid #1A1A1A; white-space: nowrap; }
+  .ptable tr:last-child td { border-bottom: 0; }
+  .ptable .who { display: flex; align-items: center; gap: 7px; }
+  .ptable .av {
+    width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; background: #1C2620; color: #3ECF8E;
+    display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700;
+  }
+  .tag { display: inline-block; font-size: 8.5px; font-weight: 700; border-radius: 999px; padding: 3px 8px; }
+  .tag.g { background: rgba(62,207,142,.12); color: #3ECF8E; }
+  .tag.b { background: rgba(56,189,248,.12); color: #38BDF8; }
+  .tag.y { background: rgba(245,158,11,.12); color: #FBBF24; }
+  .tag.r { background: rgba(248,113,113,.12); color: #F87171; }
+  .tag.n { background: #1C1C1C; color: #8A8A8A; }
+  .ptable-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 920px) {
+    .kanban { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .kanban { grid-template-columns: 1fr; }
+    .panel-chips i:nth-child(n+5) { display: none; }
+  }
 
   @media (max-width: 920px) {
     .bonus-perks { grid-template-columns: 1fr; }
@@ -476,11 +528,21 @@
   .copyright { text-align: center; padding: 0 24px 28px; font-size: 12.5px; color: #4D4D4D; }
 
   /* ---------- FLOATING WHATSAPP ---------- */
+  .wa-dock {
+    position: fixed; bottom: 24px; right: 24px; z-index: 60;
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+  }
   .wa-float {
-    position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 62px; height: 62px; border-radius: 50%;
+    width: 62px; height: 62px; border-radius: 50%;
     background: #25D366; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 16px 34px -8px rgba(37,211,102,.55);
   }
+  .wa-dock-label {
+    background: #141414; border: 1px solid #2E2E2E; color: #EDEDED;
+    font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 8px;
+    white-space: nowrap; box-shadow: 0 8px 20px -10px rgba(0,0,0,.8);
+  }
+  .wa-dock:hover .wa-dock-label { color: #3ECF8E; border-color: rgba(62,207,142,.45); }
 
   /* ================= RESPONSIVE ================= */
   @media (max-width: 1000px) {
@@ -521,13 +583,13 @@
 <header class="site-nav">
   <nav class="nav-inner">
     <a href="#topo" class="brand">
-      <span class="brand-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#062616" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10.2" ry="4.4" transform="rotate(-28 12 12)"></ellipse><circle cx="12" cy="12" r="3" fill="#062616" stroke="none"></circle></svg></span>
+      <span class="brand-mark"><img src="assets/logo-mentor-ia-global.png" alt="Mentor IA Global" width="34" height="34"></span>
       <span>Mentor <span style="color:#3ECF8E">IA</span> Global</span>
     </a>
     <div class="navlinks">
       <a href="#dores">Desafios</a>
       <a href="#solucao">Solução</a>
-      <a href="#como">Como funciona</a>
+      <a href="#video">Como funciona</a>
       <a href="#bonus">Painel</a>
       <a href="#faq">Dúvidas</a>
     </div>
@@ -546,8 +608,8 @@
       <h1 class="hero-title">Sua clínica atendendo pacientes <span class="accent">em segundos</span>, 24 horas por dia.</h1>
       <p class="hero-sub">Uma secretária virtual inteligente no seu WhatsApp que responde dúvidas, informa procedimentos e valores, agenda consultas e organiza sua agenda — mesmo quando sua recepção está ocupada ou fechada.</p>
       <div class="hero-ctas">
-        <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green"><span>✆</span> Experimentar a IA no WhatsApp →</a>
-        <a href="#como" class="btn-ghost">Ver como funciona →</a>
+        <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green">Experimentar a IA no WhatsApp →</a>
+        <a href="#video" class="btn-ghost">Ver como funciona →</a>
       </div>
       <p style="font-size:14.5px;color:#8A8A8A;line-height:1.5;margin-top:16px;max-width:470px">Porque seu próximo paciente pode estar mandando uma mensagem enquanto você dorme.</p>
       <div class="hero-social">
@@ -627,7 +689,7 @@
       <p class="section-sub">Converse com a nossa IA como se você fosse um paciente da clínica. Pergunte sobre procedimentos, preços, horários ou tente agendar uma consulta.</p>
     </div>
     <div class="livecal-ctas" style="margin-top:34px">
-      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px"><span style="font-size:21px">✆</span> Experimentar a IA agora →</a>
+      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px">Experimentar a IA agora →</a>
     </div>
     <p class="bonus-fine" style="margin-top:16px">Demonstração automatizada no WhatsApp <b style="color:#A1A1A1">(11) 95101-0684</b> · este não é o canal comercial</p>
   </div>
@@ -646,7 +708,7 @@
         <span class="pill">Informa valores e procedimentos</span>
         <span class="pill">Conduz até o agendamento</span>
       </div>
-      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-green" style="margin-top:30px"><span>✆</span> Falar com um especialista →</a>
+      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-green" style="margin-top:30px">Falar com um especialista →</a>
     </div>
     <div class="solution-cards">
       <div class="sol-card"><div class="emoji">💬</div><h3>Seu paciente não precisa esperar pela resposta</h3><p>A IA responde dúvidas sobre procedimentos, valores, horários e informações da clínica em segundos.</p></div>
@@ -654,20 +716,6 @@
       <div class="sol-card"><div class="emoji">🌙</div><h3>Sua clínica atende depois que a recepção fecha</h3><p>Noite, fim de semana ou feriado: o paciente continua recebendo atendimento.</p></div>
       <div class="sol-card"><div class="emoji">🧘</div><h3>Menos trabalho operacional para sua recepção</h3><p>Reagendamentos e cancelamentos podem ser resolvidos automaticamente pelo WhatsApp.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- ===== COMO FUNCIONA ===== -->
-<section class="wrap" id="como" style="padding-top:96px;padding-bottom:30px">
-  <div class="section-head">
-    <span class="kicker" style="color:#3ECF8E">Simples de começar</span>
-    <h2 class="section-title">Em 4 passos, sua clínica passa a responder todo mundo na hora.</h2>
-  </div>
-  <div class="grid4">
-    <div class="step"><div class="step-n">1</div><h3>Conversamos sobre a sua clínica</h3><p>Entendemos sua especialidade, horários e a forma como você gosta de atender.</p></div>
-    <div class="step"><div class="step-n">2</div><h3>Configuramos com as suas informações</h3><p>Procedimentos, valores, horários disponíveis e o jeito da sua clínica falar — tudo definido por você.</p></div>
-    <div class="step"><div class="step-n">3</div><h3>Conectamos ao seu WhatsApp e agenda</h3><p>Ele passa a atender no seu número e a organizar tudo no seu Google Agenda.</p></div>
-    <div class="step"><div class="step-n">4</div><h3>Ela atende, você acompanha pelo painel</h3><p>A partir daí, nenhum paciente fica sem resposta — e você enxerga cada contato e cada agendamento.</p></div>
   </div>
 </section>
 
@@ -799,7 +847,7 @@
         <span class="panel-dot" style="background:#F87171"></span>
         <span class="panel-dot" style="background:#FBBF24"></span>
         <span class="panel-dot" style="background:#3ECF8E"></span>
-        <span class="panel-url">painel.mentoriaglobal.com</span>
+        <span class="panel-url">dashboard.mentoriaglobal.com</span>
       </div>
       <div class="panel-body">
         <aside class="panel-side">
@@ -809,6 +857,7 @@
           </div>
           <div class="panel-nav">
             <i class="on">Visão geral</i>
+            <i>Kanban de atendimento</i>
             <i>Lista de clientes</i>
             <i>Próximos agendamentos</i>
             <i>Relatórios</i>
@@ -818,27 +867,65 @@
         <div class="panel-main">
           <div class="panel-top">
             <div>
-              <div class="panel-h">Visão geral do atendimento</div>
-              <div class="panel-sh">Desempenho dos atendimentos e agendamentos da sua clínica</div>
+              <div class="panel-h">Controle de Atendimento da Clínica</div>
+              <div class="panel-sh">Acompanhe o desempenho dos atendimentos e agendamentos da sua clínica</div>
             </div>
             <span class="panel-pdf">⤓ Baixar relatório PDF</span>
           </div>
 
+          <div class="panel-chips">
+            <i>Hoje</i><i>Ontem</i><i>Últimos 7 dias</i><i>Este mês</i><i class="on">Mês passado</i><i>Este ano</i><i>Período personalizado</i>
+          </div>
+
           <div class="panel-insight">
-            No período, o WhatsApp recebeu <b>149 novos contatos</b> e gerou <b>113 agendamentos</b> — taxa de conversão de <b>75,8%</b>. <b>89 contatos</b> chegaram fora do horário comercial.
+            No período, o WhatsApp recebeu <b>320 novos contatos</b> e gerou <b>251 agendamentos</b> — taxa de conversão de <b>78,4%</b>. <b>199 contatos</b> chegaram fora do horário comercial.
           </div>
 
           <div class="kpi-row">
-            <div class="kpi"><div class="kpi-t">Atendimentos iniciados</div><div class="kpi-v">149</div><div class="kpi-d">↗ +47,5%</div></div>
-            <div class="kpi"><div class="kpi-t">Agendamentos gerados</div><div class="kpi-v">113</div><div class="kpi-d">↗ +44,9%</div></div>
-            <div class="kpi"><div class="kpi-t">Taxa de conversão</div><div class="kpi-v">75,8%</div><div class="kpi-d down">↘ −1,4 p.p.</div></div>
-            <div class="kpi warn"><div class="kpi-t">Contatos fora do horário</div><div class="kpi-v">89</div><div class="kpi-d">↗ +53,4%</div></div>
+            <div class="kpi"><div class="kpi-t">Atendimentos iniciados</div><div class="kpi-v">320</div><div class="kpi-d">↗ +160,2%</div></div>
+            <div class="kpi"><div class="kpi-t">Agendamentos gerados</div><div class="kpi-v">251</div><div class="kpi-d">↗ +148,5%</div></div>
+            <div class="kpi"><div class="kpi-t">Taxa de conversão</div><div class="kpi-v">78,4%</div><div class="kpi-d down">↘ −3,7 p.p.</div></div>
+            <div class="kpi warn"><div class="kpi-t">Contatos fora do horário</div><div class="kpi-v">199</div><div class="kpi-d">↗ +136,9%</div></div>
+          </div>
+
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-t">Consultas canceladas</div><div class="kpi-v">30</div><div class="kpi-d down">↗ +87,5%</div></div>
+            <div class="kpi"><div class="kpi-t">Reagendamentos</div><div class="kpi-v">52</div><div class="kpi-d">↗ +225,0%</div></div>
+            <div class="kpi"><div class="kpi-t">Taxa de cancelamento</div><div class="kpi-v">12,0%</div><div class="kpi-d">↘ −3,9 p.p.</div></div>
+            <div class="kpi"><div class="kpi-t">Procedimento mais procurado</div><div class="kpi-v" style="font-size:15px;line-height:1.25">Avaliação odontológica</div><div class="kpi-d" style="color:#6B6B6B">64 solicitações</div></div>
+          </div>
+
+          <div class="pbox" style="margin-top:12px">
+            <div class="pbox-t">▦ Kanban de atendimento <span style="font-weight:400;font-size:10px;color:#6B6B6B">· acompanhe cada paciente por etapa</span></div>
+            <div class="pbox-s">Do primeiro contato à consulta confirmada</div>
+            <div class="kanban">
+              <div class="kcol">
+                <div class="kcol-h"><span style="color:#8A8A8A">Novo contato</span><b>35</b></div>
+                <div class="kcard"><u>Mauricio Marques</u><s>Implante dentário</s><em class="tag y">Fora do horário</em></div>
+                <div class="kcard"><u>Beatriz M. Lopes</u><s>Avaliação odontológica</s><em class="tag n">Aguardando</em></div>
+              </div>
+              <div class="kcol">
+                <div class="kcol-h"><span style="color:#38BDF8">Em atendimento</span><b>28</b></div>
+                <div class="kcard"><u>Simone B. Nascimento</u><s>Clareamento dental</s><em class="tag b">IA respondendo</em></div>
+                <div class="kcard"><u>Thiago F. Santos</u><s>Check-up preventivo</s><em class="tag b">Escolhendo horário</em></div>
+              </div>
+              <div class="kcol">
+                <div class="kcol-h"><span style="color:#3ECF8E">Agendado</span><b>203</b></div>
+                <div class="kcard"><u>Nelson Lima</u><s>Limpeza / Profilaxia</s><em class="tag g">Sexta · 09:30</em></div>
+                <div class="kcard"><u>Daniel Almeida</u><s>Tratamento de canal</s><em class="tag g">Sexta · 11:00</em></div>
+              </div>
+              <div class="kcol">
+                <div class="kcol-h"><span style="color:#3ECF8E">Confirmado</span><b>9</b></div>
+                <div class="kcard"><u>Giovana C. Lima</u><s>Prótese dentária</s><em class="tag g">Confirmado ✓</em></div>
+                <div class="kcard"><u>Renata Prado</u><s>Avaliação ortodôntica</s><em class="tag g">Confirmado ✓</em></div>
+              </div>
+            </div>
           </div>
 
           <div class="panel-charts">
             <div class="pbox">
-              <div class="pbox-t">Volume de atendimentos</div>
-              <div class="pbox-s">Conversas recebidas por dia</div>
+              <div class="pbox-t">Volume de atendimentos ao longo do tempo</div>
+              <div class="pbox-s">Quantas conversas o WhatsApp recebeu por dia</div>
               <svg viewBox="0 0 460 130" width="100%" height="118" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1">
@@ -849,28 +936,28 @@
                 <line x1="0" y1="30" x2="460" y2="30" stroke="#1E1E1E" stroke-width="1"></line>
                 <line x1="0" y1="65" x2="460" y2="65" stroke="#1E1E1E" stroke-width="1"></line>
                 <line x1="0" y1="100" x2="460" y2="100" stroke="#1E1E1E" stroke-width="1"></line>
-                <path d="M0,52 L33,96 L66,80 L99,68 L132,74 L165,104 L198,34 L231,66 L264,58 L297,22 L330,86 L363,72 L396,90 L429,44 L460,12 L460,130 L0,130 Z" fill="url(#gArea)"></path>
-                <polyline points="0,52 33,96 66,80 99,68 132,74 165,104 198,34 231,66 264,58 297,22 330,86 363,72 396,90 429,44 460,12" fill="none" stroke="#3ECF8E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"></polyline>
-                <circle cx="460" cy="12" r="4" fill="#3ECF8E"></circle>
-                <circle cx="297" cy="22" r="3" fill="#0A0A0A" stroke="#3ECF8E" stroke-width="2"></circle>
+                <path d="M0,88 L33,112 L66,96 L99,86 L132,98 L165,108 L198,80 L231,92 L264,84 L297,26 L330,44 L363,40 L396,18 L429,84 L460,112 L460,130 L0,130 Z" fill="url(#gArea)"></path>
+                <polyline points="0,88 33,112 66,96 99,86 132,98 165,108 198,80 231,92 264,84 297,26 330,44 363,40 396,18 429,84 460,112" fill="none" stroke="#3ECF8E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"></polyline>
+                <circle cx="396" cy="18" r="4" fill="#3ECF8E"></circle>
+                <circle cx="297" cy="26" r="3" fill="#0A0A0A" stroke="#3ECF8E" stroke-width="2"></circle>
               </svg>
-              <div style="font-size:9.5px;color:#6B6B6B;margin-top:8px">Pico de atendimento: 29/08 com 15 novos contatos.</div>
+              <div style="font-size:9.5px;color:#6B6B6B;margin-top:8px">Pico de atendimento: 22/08 com 32 novos contatos.</div>
             </div>
 
             <div class="pbox">
-              <div class="pbox-t">Quando os pacientes chamam</div>
-              <div class="pbox-s">Distribuição por horário</div>
+              <div class="pbox-t">Quando as pessoas chamam</div>
+              <div class="pbox-s">Distribuição dos contatos por horário</div>
               <div class="donut-wrap">
                 <svg viewBox="0 0 120 120" width="132" height="132" aria-hidden="true">
                   <circle cx="60" cy="60" r="48" fill="none" stroke="#1A1A1A" stroke-width="15"></circle>
-                  <circle cx="60" cy="60" r="48" fill="none" stroke="#F59E0B" stroke-width="15" stroke-dasharray="180 302" stroke-linecap="round" transform="rotate(-90 60 60)"></circle>
-                  <circle cx="60" cy="60" r="48" fill="none" stroke="#3ECF8E" stroke-width="15" stroke-dasharray="118 302" stroke-dashoffset="-186" stroke-linecap="round" transform="rotate(-90 60 60)"></circle>
+                  <circle cx="60" cy="60" r="48" fill="none" stroke="#F59E0B" stroke-width="15" stroke-dasharray="188 302" stroke-linecap="round" transform="rotate(-90 60 60)"></circle>
+                  <circle cx="60" cy="60" r="48" fill="none" stroke="#3ECF8E" stroke-width="15" stroke-dasharray="110 302" stroke-dashoffset="-194" stroke-linecap="round" transform="rotate(-90 60 60)"></circle>
                 </svg>
-                <div class="donut-mid"><b>59,7%</b><span>fora do horário</span></div>
+                <div class="donut-mid"><b>62,2%</b><span>fora do horário</span></div>
               </div>
               <div class="legend">
-                <span><s style="background:#3ECF8E"></s>Comercial 60</span>
-                <span><s style="background:#F59E0B"></s>Fora 89</span>
+                <span><s style="background:#3ECF8E"></s>Comercial 121</span>
+                <span><s style="background:#F59E0B"></s>Fora 199</span>
               </div>
             </div>
           </div>
@@ -878,44 +965,69 @@
           <div class="panel-charts" style="grid-template-columns:1.55fr 1fr">
             <div class="pbox">
               <div class="pbox-t">Procedimentos mais procurados</div>
-              <div class="pbox-s">O que os pacientes mais buscam</div>
+              <div class="pbox-s">Quais tratamentos os pacientes mais buscam</div>
               <div class="bars">
                 <div class="bar-row"><em>Avaliação</em><span class="bar-track"><u style="width:96%"></u></span></div>
-                <div class="bar-row"><em>Limpeza dental</em><span class="bar-track"><u style="width:82%"></u></span></div>
-                <div class="bar-row"><em>Clareamento</em><span class="bar-track"><u style="width:58%"></u></span></div>
-                <div class="bar-row"><em>Extração simples</em><span class="bar-track"><u style="width:47%"></u></span></div>
-                <div class="bar-row"><em>Canal</em><span class="bar-track"><u style="width:36%"></u></span></div>
-                <div class="bar-row"><em>Implante</em><span class="bar-track"><u style="width:28%"></u></span></div>
+                <div class="bar-row"><em>Limpeza / Profilaxia</em><span class="bar-track"><u style="width:74%"></u></span></div>
+                <div class="bar-row"><em>Tratamento de canal</em><span class="bar-track"><u style="width:62%"></u></span></div>
+                <div class="bar-row"><em>Clareamento</em><span class="bar-track"><u style="width:53%"></u></span></div>
+                <div class="bar-row"><em>Extração de siso</em><span class="bar-track"><u style="width:51%"></u></span></div>
+                <div class="bar-row"><em>Urgência · dor</em><span class="bar-track"><u style="width:44%"></u></span></div>
+                <div class="bar-row"><em>Implante dentário</em><span class="bar-track"><u style="width:36%"></u></span></div>
+                <div class="bar-row"><em>Check-up preventivo</em><span class="bar-track"><u style="width:30%"></u></span></div>
               </div>
             </div>
 
             <div class="pbox">
-              <div class="pbox-t">Agenda de agosto</div>
-              <div class="pbox-s">218 agendamentos futuros</div>
-              <div class="cal">
-                <b>D</b><b>S</b><b>T</b><b>Q</b><b>Q</b><b>S</b><b>S</b>
-                <i class="dim">26</i><i class="dim">27</i><i class="dim">28</i><i class="dim">29</i><i class="dim">30</i><i class="dim">31</i><i>1</i>
-                <i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i>
-                <i>9</i><i>10</i><i>11</i><i>12</i><i class="has">13</i><i>14</i><i>15</i>
-                <i>16</i><i>17</i><i>18</i><i>19</i><i>20</i><i>21</i><i>22</i>
-                <i>23</i><i>24</i><i>25</i><i>26</i><i>27</i><i>28</i><i class="today">29</i>
-                <i>30</i><i class="has">31</i><i class="has">1</i><i class="has">2</i><i class="has">3</i><i class="has">4</i><i class="has">5</i>
+              <div class="pbox-t">Jornada dos atendimentos</div>
+              <div class="pbox-s">Do primeiro contato à confirmação interna</div>
+              <div class="jstep">
+                <div class="jstep-top"><b>320</b><span>100,0%</span></div>
+                <div class="jstep-l">Contatos recebidos</div>
+                <div class="jstep-bar"><u style="width:100%"></u></div>
               </div>
-              <div class="appt">
-                <div class="appt-row"><span><span class="appt-n">Nelson Lima</span><br><span class="appt-p">Clareamento dental</span></span><span class="appt-t">09:30</span></div>
-                <div class="appt-row"><span><span class="appt-n">Daniel Almeida</span><br><span class="appt-p">Avaliação odontológica</span></span><span class="appt-t">11:00</span></div>
+              <div class="jarrow">↓</div>
+              <div class="jstep">
+                <div class="jstep-top"><b>251</b><span>78,4%</span></div>
+                <div class="jstep-l">Agendamentos</div>
+                <div class="jstep-bar"><u style="width:78%"></u></div>
+              </div>
+              <div class="jarrow">↓</div>
+              <div class="jstep">
+                <div class="jstep-top"><b>9</b><span>2,8%</span></div>
+                <div class="jstep-l">Confirmadas pela secretária</div>
+                <div class="jstep-bar"><u style="width:6%"></u></div>
+              </div>
+              <div class="panel-charts" style="grid-template-columns:1fr 1fr;margin-top:10px;gap:8px">
+                <div class="kpi" style="padding:10px"><div class="kpi-t">Cancelamentos</div><div class="kpi-v" style="font-size:18px">30</div></div>
+                <div class="kpi" style="padding:10px"><div class="kpi-t">Reagendamentos</div><div class="kpi-v" style="font-size:18px">52</div></div>
               </div>
             </div>
           </div>
 
           <div class="pbox" style="margin-top:12px">
-            <div class="pbox-t">✦ Insights do período <span style="font-weight:400;font-size:10px;color:#6B6B6B">· análise gerada com IA</span></div>
+            <div class="pbox-t">✦ Insights do período <span style="font-weight:400;font-size:10px;color:#6B6B6B">· análise inteligente gerada com IA</span></div>
             <div class="pbox-s">Leitura automática do que aconteceu na sua clínica</div>
             <div class="ins-grid">
-              <div class="ins g"><h5>↗ Crescimento no volume</h5><p>149 atendimentos e 113 agendamentos, acima do período anterior (101 e 78).</p></div>
-              <div class="ins y"><h5>♦ Promova os mais buscados</h5><p>Avaliação e limpeza somam 61 agendamentos — campanhas podem ampliar a captação.</p></div>
-              <div class="ins r"><h5>⚠ Contatos fora do horário</h5><p>Quase 60% dos atendimentos chegaram com a clínica fechada.</p></div>
-              <div class="ins b"><h5>◷ Oscilação diária</h5><p>Os atendimentos variaram de 0 a 15 por dia, afetando a previsibilidade.</p></div>
+              <div class="ins g"><h5>↗ Crescimento nos atendimentos</h5><p>Os atendimentos iniciados cresceram 160,2% em relação ao período anterior.</p></div>
+              <div class="ins r"><h5>⚠ Queda na taxa de conversão</h5><p>A conversão caiu 3,7 p.p., de 82,1% para 78,4% — vale revisar o fechamento.</p></div>
+              <div class="ins y"><h5>♦ Atendimento fora do horário</h5><p>62,2% dos contatos chegaram com a clínica fechada e a maioria virou agendamento.</p></div>
+              <div class="ins b"><h5>◷ Horário de pico da agenda</h5><p>A maior parte das consultas se concentra entre 14h e 16h.</p></div>
+            </div>
+          </div>
+
+          <div class="pbox" style="margin-top:12px">
+            <div class="pbox-t">Últimos contatos recebidos</div>
+            <div class="pbox-s">Lista resumida dos atendimentos</div>
+            <div class="ptable-scroll">
+              <table class="ptable">
+                <tr><th>Cliente</th><th>Procedimento</th><th>Resultado</th><th>Horário do contato</th><th>Início</th></tr>
+                <tr><td><span class="who"><span class="av">MM</span> Mauricio Marques</span></td><td>Implante dentário</td><td><span class="tag g">Agendado</span></td><td><span class="tag y">Fora do horário</span></td><td>30/08 14:47</td></tr>
+                <tr><td><span class="who"><span class="av">BM</span> Beatriz M. Lopes</span></td><td>Avaliação odontológica</td><td><span class="tag b">Reagendado</span></td><td><span class="tag y">Fora do horário</span></td><td>29/08 10:09</td></tr>
+                <tr><td><span class="who"><span class="av">SB</span> Simone B. Nascimento</span></td><td>Clareamento dental</td><td><span class="tag g">Agendado</span></td><td><span class="tag y">Fora do horário</span></td><td>29/08 09:44</td></tr>
+                <tr><td><span class="who"><span class="av">TF</span> Thiago F. Santos</span></td><td>Check-up preventivo</td><td><span class="tag g">Agendado</span></td><td><span class="tag n">Comercial</span></td><td>29/08 09:05</td></tr>
+                <tr><td><span class="who"><span class="av">GC</span> Giovana C. Lima</span></td><td>Limpeza / Profilaxia</td><td><span class="tag r">Cancelado</span></td><td><span class="tag y">Fora do horário</span></td><td>29/08 07:49</td></tr>
+              </table>
             </div>
           </div>
         </div>
@@ -929,7 +1041,7 @@
     </div>
 
     <div class="bonus-ctas">
-      <a href="https://painel.mentoriaglobal.com/" target="_blank" rel="noopener" class="btn-green" style="font-size:17px;padding:17px 32px">⧉ Ver Painel Bônus</a>
+      <a href="https://dashboard.mentoriaglobal.com/" target="_blank" rel="noopener" class="btn-green" style="font-size:17px;padding:17px 32px">⧉ Ver Painel Bônus</a>
     </div>
     <p class="bonus-fine">Painel de demonstração com dados ilustrativos · Incluído sem custo para clientes do atendimento com IA</p>
 
@@ -968,12 +1080,9 @@
       <h2 class="section-title">Benefícios que aparecem já na primeira semana.</h2>
     </div>
     <div class="grid3">
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">⚡</div><h3>Mais pacientes atendidos</h3><p>Nenhum paciente precisa esperar até amanhã para receber uma primeira resposta.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(56,189,248,.12)">🌎</div><h3>Mais oportunidades aproveitadas</h3><p>Quem demonstra interesse recebe atenção enquanto ainda está interessado.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">🗓️</div><h3>Atendimento além do horário comercial</h3><p>Sua clínica continua disponível mesmo quando ninguém está na recepção.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(250,204,21,.12)">🔔</div><h3>Menos trabalho para sua equipe</h3><p>Sua recepção deixa de gastar tempo respondendo as mesmas perguntas todos os dias.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(167,139,250,.12)">🧘</div><h3>Mais organização</h3><p>Agendamentos e informações ficam centralizados, organizados e sempre na mesma agenda.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(248,113,113,.12)">📈</div><h3>Mais controle</h3><p>O painel mostra exatamente o que está acontecendo com os atendimentos da sua clínica.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">⚡</div><h3>Nenhum paciente sem resposta</h3><p>Cada contato é atendido em segundos, a qualquer hora — inclusive à noite, no fim de semana e nos feriados, quando sua recepção está fechada.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(56,189,248,.12)">📈</div><h3>Mais consultas na agenda</h3><p>Quem demonstra interesse é conduzido até o horário marcado enquanto ainda está decidindo — em vez de virar uma oportunidade esquecida.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(167,139,250,.12)">🧘</div><h3>Recepção livre para cuidar de pacientes</h3><p>A IA assume as perguntas repetitivas e os reagendamentos, e você acompanha tudo pelo painel — com números reais em vez de achismo.</p></div>
     </div>
   </div>
 </section>
@@ -993,7 +1102,7 @@
         <div class="stat-bar"><span data-fill="100"></span></div>
       </div>
       <div class="stat-card">
-        <div class="stat-value" data-count="30" data-prefix="&lt;" data-suffix="s" data-decimals="0" data-countdown="1">&lt;60s</div>
+        <div class="stat-value" data-count="40" data-prefix="&lt;" data-suffix="s" data-decimals="0" data-countdown="1">&lt;80s</div>
         <div class="stat-label">para responder cada paciente</div>
         <div class="stat-bar"><span data-fill="92"></span></div>
       </div>
@@ -1126,7 +1235,7 @@
     <h2>Enquanto você pensa, outro paciente pode estar esperando uma resposta.</h2>
     <p class="sub">Descubra como sua clínica pode atender, informar e agendar pacientes automaticamente pelo WhatsApp.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px">
-      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px"><span style="font-size:21px">✆</span> Experimentar a IA no WhatsApp →</a>
+      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px">Experimentar a IA no WhatsApp →</a>
     </div>
     <p class="fine" style="margin-top:26px;color:#A1A1A1">Prefere falar diretamente com alguém?</p>
     <div style="display:flex;justify-content:center;margin-top:12px">
@@ -1139,16 +1248,19 @@
 <!-- ===== RODAPÉ ===== -->
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div class="footer-brand"><span class="brand-mark" style="width:34px;height:34px;border-radius:10px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#062616" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10.2" ry="4.4" transform="rotate(-28 12 12)"></ellipse><circle cx="12" cy="12" r="3" fill="#062616" stroke="none"></circle></svg></span> Mentor <span style="color:#3ECF8E">IA</span> Global</div>
+    <div class="footer-brand"><span class="brand-mark" style="width:34px;height:34px"><img src="assets/logo-mentor-ia-global.png" alt="Mentor IA Global" width="30" height="30"></span> Mentor <span style="color:#3ECF8E">IA</span> Global</div>
     <p class="footer-note">Atendimento inteligente via WhatsApp para clínicas e profissionais da saúde.</p>
-    <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="footer-wa">✆ Falar com um especialista</a>
+    <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="footer-wa">Falar com um especialista</a>
   </div>
   <div class="copyright">© 2026 Mentor IA Global · mentoriaglobal.com · Todos os direitos reservados</div>
 </footer>
 
 <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
-<a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" aria-label="Falar com um especialista" title="Falar com um especialista — atendimento comercial" class="wa-float">
+<a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" aria-label="Falar com um especialista" title="Falar com um especialista — atendimento comercial" class="wa-dock">
+  <span class="wa-float">
   <svg viewBox="0 0 32 32" width="34" height="34" fill="#fff"><path d="M16 .4C7.2.4.4 7.2.4 16c0 2.9.8 5.6 2.1 8L.2 31.6l7.8-2.3A15.5 15.5 0 0 0 16 31.6C24.8 31.6 31.6 24.8 31.6 16S24.8.4 16 .4zm0 28.5c-2.6 0-5-.7-7.1-1.9l-.5-.3-4.6 1.3 1.3-4.5-.3-.5A12.8 12.8 0 0 1 3.2 16C3.2 8.9 8.9 3.2 16 3.2S28.8 8.9 28.8 16 23.1 28.9 16 28.9zm7.1-9.6c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"></path></svg>
+  </span>
+  <span class="wa-dock-label">Fale Conosco</span>
 </a>
 
 <script>
