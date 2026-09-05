@@ -332,6 +332,13 @@
   }
   .livecal-quote em { font-style: normal; color: #3ECF8E; }
   .livecal-ctas { display: flex; justify-content: center; margin-top: 28px; }
+  .videowrap {
+    position: relative; width: 100%; max-width: 920px; margin: 40px auto 0;
+    padding-top: 56.25%; border-radius: 16px; overflow: hidden;
+    background: #000; border: 1px solid #2A2A2A;
+    box-shadow: 0 50px 100px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(62,207,142,.06);
+  }
+  .videowrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: block; }
 
   @media (max-width: 920px) {
     .livecal-frame { height: 520px; }
@@ -476,8 +483,10 @@
   }
 
   /* ================= RESPONSIVE ================= */
-  @media (max-width: 920px) {
+  @media (max-width: 1000px) {
     .navlinks { display: none; }
+  }
+  @media (max-width: 920px) {
     .compare-grid { grid-template-columns: 1fr; }
     .flow-grid { grid-template-columns: 1fr; }
     .flow-arrow-icon { -webkit-transform: rotate(90deg); transform: rotate(90deg); }
@@ -519,12 +528,12 @@
       <a href="#dores">Desafios</a>
       <a href="#solucao">Solução</a>
       <a href="#como">Como funciona</a>
-      <a href="#resultados">Resultados</a>
+      <a href="#bonus">Painel</a>
       <a href="#faq">Dúvidas</a>
     </div>
     <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="nav-cta">
       <svg viewBox="0 0 32 32" width="18" height="18" fill="#062616"><path d="M16 .4C7.2.4.4 7.2.4 16c0 2.9.8 5.6 2.1 8L.2 31.6l7.8-2.3A15.5 15.5 0 0 0 16 31.6C24.8 31.6 31.6 24.8 31.6 16S24.8.4 16 .4zm0 28.5c-2.6 0-5-.7-7.1-1.9l-.5-.3-4.6 1.3 1.3-4.5-.3-.5A12.8 12.8 0 0 1 3.2 16C3.2 8.9 8.9 3.2 16 3.2S28.8 8.9 28.8 16 23.1 28.9 16 28.9zm7.1-9.6c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"></path></svg>
-      <span class="nav-cta-text">Falar no WhatsApp</span>
+      <span class="nav-cta-text">Falar com um especialista</span>
     </a>
   </nav>
 </header>
@@ -533,13 +542,14 @@
 <section class="hero" id="topo">
   <div class="hero-grid wrap">
     <div class="hero-copy">
-      <div class="hero-badge"><span class="hero-dot"></span> Funcionário Digital com Inteligência Artificial</div>
-      <h1 class="hero-title">Sua clínica respondendo pacientes <span class="accent">em segundos</span>, 24 horas por dia.</h1>
-      <p class="hero-sub">Um atendente inteligente no seu WhatsApp que responde na hora, agenda consultas, confirma horários e organiza sua agenda — sem sobrecarregar a recepção e sem perder nenhum paciente.</p>
+      <div class="hero-badge"><span class="hero-dot"></span> Secretária virtual inteligente para clínicas odontológicas</div>
+      <h1 class="hero-title">Sua clínica atendendo pacientes <span class="accent">em segundos</span>, 24 horas por dia.</h1>
+      <p class="hero-sub">Uma secretária virtual inteligente no seu WhatsApp que responde dúvidas, informa procedimentos e valores, agenda consultas e organiza sua agenda — mesmo quando sua recepção está ocupada ou fechada.</p>
       <div class="hero-ctas">
-        <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green"><span>✆</span> Quero uma demonstração</a>
+        <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green"><span>✆</span> Experimentar a IA no WhatsApp →</a>
         <a href="#como" class="btn-ghost">Ver como funciona →</a>
       </div>
+      <p style="font-size:14.5px;color:#8A8A8A;line-height:1.5;margin-top:16px;max-width:470px">Porque seu próximo paciente pode estar mandando uma mensagem enquanto você dorme.</p>
       <div class="hero-social">
         <div class="avatars">
           <span class="avatar" style="background:#16281F;color:#3ECF8E">DR</span>
@@ -581,10 +591,10 @@
   </div>
   <div class="trust-strip">
     <div class="trust-inner">
-      <span>⏱️ Resposta em segundos</span>
+      <span>⏱️ Nenhum paciente esperando resposta</span>
       <span>🌙 Atende de madrugada e fins de semana</span>
-      <span>🗓️ Integrado ao Google Agenda</span>
-      <span>📉 Menos faltas, mais consultas</span>
+      <span>🗓️ Consulta marcada direto na agenda</span>
+      <span>📈 Mais oportunidades aproveitadas</span>
     </div>
   </div>
 </section>
@@ -593,18 +603,34 @@
 <section class="wrap" id="dores" style="padding-top:96px;padding-bottom:20px">
   <div class="section-head">
     <span class="kicker" style="color:#F87171">O problema silencioso</span>
-    <h2 class="section-title">Cada mensagem sem resposta é um paciente que marca em outro lugar.</h2>
-    <p class="section-sub">Enquanto a recepção atende o telefone, organiza a sala e cuida de quem está na clínica, o WhatsApp acumula mensagens. E quem espera, desiste.</p>
+    <h2 class="section-title">Quantos pacientes sua clínica pode estar perdendo porque ninguém respondeu na hora?</h2>
+    <p class="section-sub">Um paciente manda mensagem à noite. Outro pergunta o preço e espera horas por uma resposta. Outro quer marcar uma consulta enquanto sua recepção está ocupada. E quando a resposta finalmente chega, ele pode já ter procurado outra clínica.</p>
+    <p class="section-sub" style="color:#EDEDED;font-weight:600">O problema não é falta de pacientes. Muitas vezes, é falta de resposta no momento certo.</p>
   </div>
   <div class="grid3">
-    <div class="card"><div class="card-icon">⏳</div><h3>Pacientes esperando resposta</h3><p>Quem manda mensagem quer atenção agora. Cada minuto de espera é um convite para procurar outra clínica.</p></div>
-    <div class="card"><div class="card-icon">📥</div><h3>Mensagens acumuladas</h3><p>O WhatsApp lota durante o expediente e ninguém dá conta de responder tudo com calma e atenção.</p></div>
-    <div class="card"><div class="card-icon">📉</div><h3>Consultas perdidas</h3><p>Agendamentos não confirmados viram cadeiras vazias — e faturamento que simplesmente não acontece.</p></div>
-    <div class="card"><div class="card-icon">🔥</div><h3>Recepção sobrecarregada</h3><p>Telefone, balcão e WhatsApp ao mesmo tempo. A equipe se divide e o atendimento sofre.</p></div>
-    <div class="card"><div class="card-icon">🌙</div><h3>Só atende em horário comercial</h3><p>Fora do expediente, as mensagens ficam sem resposta. E é justamente à noite que muitos pacientes escrevem.</p></div>
-    <div class="card"><div class="card-icon">🗂️</div><h3>Agenda desorganizada</h3><p>Horários duplicados, remarcações soltas e confusão entre planilhas, papel e cabeça.</p></div>
+    <div class="card"><div class="card-icon">⏳</div><h3>O paciente decide enquanto espera</h3><p>Quem pergunta sobre um tratamento quer resposta agora. Cada minuto de silêncio é um convite para procurar outra clínica.</p></div>
+    <div class="card"><div class="card-icon">📥</div><h3>As mesmas perguntas, o dia inteiro</h3><p>Valores, procedimentos, horários e convênios: sua recepção repete as mesmas respostas em vez de cuidar de quem está na cadeira.</p></div>
+    <div class="card"><div class="card-icon">📉</div><h3>Interesse que nunca virou consulta</h3><p>O paciente demonstrou interesse, não foi conduzido até o agendamento e virou uma oportunidade que ninguém contabiliza.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Recepção fazendo três coisas ao mesmo tempo</h3><p>Telefone, balcão e WhatsApp competindo pela mesma pessoa. Alguém sempre fica sem atenção.</p></div>
+    <div class="card"><div class="card-icon">🌙</div><h3>A clínica fecha, as mensagens continuam</h3><p>É à noite e no fim de semana que muitos pacientes escrevem — exatamente quando não há ninguém para responder.</p></div>
+    <div class="card"><div class="card-icon">🗂️</div><h3>Nenhuma visão do que está acontecendo</h3><p>Quantos contataram? Quantos agendaram? O que mais procuram? Sem números, decidir é sempre no escuro.</p></div>
   </div>
-  <p class="closing-line">A boa notícia: nada disso precisa continuar acontecendo. 👇</p>
+  <p class="closing-line">O Funcionário Digital elimina esse intervalo entre a mensagem do paciente e a resposta da sua clínica.</p>
+</section>
+
+<!-- ===== EXPERIMENTAR A IA ===== -->
+<section class="livecal" id="experimentar">
+  <div class="wrap livecal-inner">
+    <div class="section-head">
+      <span class="kicker" style="color:#3ECF8E">Experimente você mesmo</span>
+      <h2 class="section-title" style="margin-top:14px">Pare de imaginar como funciona. Experimente.</h2>
+      <p class="section-sub">Converse com a nossa IA como se você fosse um paciente da clínica. Pergunte sobre procedimentos, preços, horários ou tente agendar uma consulta.</p>
+    </div>
+    <div class="livecal-ctas" style="margin-top:34px">
+      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px"><span style="font-size:21px">✆</span> Experimentar a IA agora →</a>
+    </div>
+    <p class="bonus-fine" style="margin-top:16px">Demonstração automatizada no WhatsApp <b style="color:#A1A1A1">(11) 95101-0684</b> · este não é o canal comercial</p>
+  </div>
 </section>
 
 <!-- ===== SOLUÇÃO ===== -->
@@ -612,21 +638,21 @@
   <div class="solution-grid wrap">
     <div class="solution-copy">
       <span class="kicker">A solução</span>
-      <h2>Conheça o seu novo Funcionário Digital.</h2>
-      <p>Ele trabalha dentro do WhatsApp que você já usa. Conversa de forma natural e gentil com cada paciente, entende o que precisam e resolve na hora — agenda, confirma, reagenda e mantém sua agenda sempre organizada.</p>
-      <p>Sem horário de almoço, sem folga, sem férias. Enquanto sua equipe cuida de quem está na clínica, ele cuida de quem está chegando.</p>
+      <h2>Sua clínica disponível para seus pacientes mesmo quando sua equipe não está.</h2>
+      <p>Ela trabalha dentro do WhatsApp que você já usa. Conversa com naturalidade, explica procedimentos, informa valores, consulta a disponibilidade e conduz o paciente até o horário marcado — no momento em que ele ainda está interessado.</p>
+      <p>Enquanto sua equipe cuida de quem está na cadeira, ela cuida de quem está chegando. Sem intervalo, sem fila de mensagens, sem oportunidade esquecida.</p>
       <div class="pill-row">
-        <span class="pill">Atende 24h por dia</span>
-        <span class="pill">Fala como gente</span>
-        <span class="pill">Nunca esquece um paciente</span>
+        <span class="pill">Responde em segundos</span>
+        <span class="pill">Informa valores e procedimentos</span>
+        <span class="pill">Conduz até o agendamento</span>
       </div>
-      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-green" style="margin-top:30px"><span>✆</span> Quero esse atendente na minha clínica</a>
+      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-green" style="margin-top:30px"><span>✆</span> Falar com um especialista →</a>
     </div>
     <div class="solution-cards">
-      <div class="sol-card"><div class="emoji">💬</div><h3>Responde na hora</h3><p>Cada paciente recebe atenção imediata, em qualquer horário.</p></div>
-      <div class="sol-card"><div class="emoji">🗓️</div><h3>Agenda e confirma</h3><p>Marca, confirma e remarca consultas sem você levantar um dedo.</p></div>
-      <div class="sol-card"><div class="emoji">🔗</div><h3>Integra com a agenda</h3><p>Tudo refletido no Google Agenda da clínica, em tempo real.</p></div>
-      <div class="sol-card"><div class="emoji">🧘</div><h3>Alivia a recepção</h3><p>Sua equipe foca em quem está na clínica, sem correria.</p></div>
+      <div class="sol-card"><div class="emoji">💬</div><h3>Seu paciente não precisa esperar pela resposta</h3><p>A IA responde dúvidas sobre procedimentos, valores, horários e informações da clínica em segundos.</p></div>
+      <div class="sol-card"><div class="emoji">🗓️</div><h3>O paciente marca enquanto ainda está interessado</h3><p>A IA consulta a disponibilidade e registra o horário diretamente na agenda da clínica.</p></div>
+      <div class="sol-card"><div class="emoji">🌙</div><h3>Sua clínica atende depois que a recepção fecha</h3><p>Noite, fim de semana ou feriado: o paciente continua recebendo atendimento.</p></div>
+      <div class="sol-card"><div class="emoji">🧘</div><h3>Menos trabalho operacional para sua recepção</h3><p>Reagendamentos e cancelamentos podem ser resolvidos automaticamente pelo WhatsApp.</p></div>
     </div>
   </div>
 </section>
@@ -635,31 +661,38 @@
 <section class="wrap" id="como" style="padding-top:96px;padding-bottom:30px">
   <div class="section-head">
     <span class="kicker" style="color:#3ECF8E">Simples de começar</span>
-    <h2 class="section-title">Em 4 passos, sua recepção ganha um reforço que nunca dorme.</h2>
+    <h2 class="section-title">Em 4 passos, sua clínica passa a responder todo mundo na hora.</h2>
   </div>
   <div class="grid4">
     <div class="step"><div class="step-n">1</div><h3>Conversamos sobre a sua clínica</h3><p>Entendemos sua especialidade, horários e a forma como você gosta de atender.</p></div>
-    <div class="step"><div class="step-n">2</div><h3>Preparamos seu Funcionário Digital</h3><p>Configuramos as respostas, o tom de voz e as regras de agendamento — tudo pronto para você.</p></div>
+    <div class="step"><div class="step-n">2</div><h3>Configuramos com as suas informações</h3><p>Procedimentos, valores, horários disponíveis e o jeito da sua clínica falar — tudo definido por você.</p></div>
     <div class="step"><div class="step-n">3</div><h3>Conectamos ao seu WhatsApp e agenda</h3><p>Ele passa a atender no seu número e a organizar tudo no seu Google Agenda.</p></div>
-    <div class="step"><div class="step-n">4</div><h3>Ele atende, você acompanha</h3><p>A partir daí, nenhum paciente fica sem resposta — e você vê a agenda enchendo.</p></div>
+    <div class="step"><div class="step-n">4</div><h3>Ela atende, você acompanha pelo painel</h3><p>A partir daí, nenhum paciente fica sem resposta — e você enxerga cada contato e cada agendamento.</p></div>
   </div>
 </section>
 
-<!-- ===== BENEFÍCIOS ===== -->
+<!-- ===== VÍDEO ===== -->
+<section class="wrap" id="video" style="padding-top:96px;padding-bottom:40px">
+  <div class="section-head">
+    <span class="kicker" style="color:#3ECF8E">Veja funcionando</span>
+    <h2 class="section-title">Veja a IA atendendo um paciente na prática</h2>
+    <p class="section-sub">Em poucos segundos, veja como uma conversa pode sair de uma simples dúvida e chegar até um agendamento.</p>
+  </div>
+  <div class="videowrap">
+    <iframe src="https://www.youtube.com/embed/q_QyaPhykuI" title="Veja a IA atendendo um paciente na prática" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- ===== FORA DO HORÁRIO ===== -->
 <section class="benefits">
   <div class="wrap" style="padding-top:90px;padding-bottom:90px">
     <div class="section-head">
-      <span class="kicker" style="color:#3ECF8E">Por que clínicas adoram</span>
-      <h2 class="section-title">Benefícios que aparecem já na primeira semana.</h2>
+      <span class="kicker" style="color:#3ECF8E">Fora do horário comercial</span>
+      <h2 class="section-title">Seu próximo paciente pode estar mandando mensagem enquanto você dorme.</h2>
+      <p class="section-sub">A maioria das clínicas não consegue responder pacientes 24 horas por dia. O Funcionário Digital consegue.</p>
+      <p class="section-sub">Enquanto sua equipe descansa, a IA continua respondendo dúvidas, apresentando procedimentos e conduzindo pacientes até o agendamento.</p>
     </div>
-    <div class="grid3">
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">⚡</div><h3>Resposta imediata, sempre</h3><p>Pacientes atendidos em segundos, com a gentileza e a clareza que fortalecem a confiança na sua clínica.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(56,189,248,.12)">🌎</div><h3>Atendimento 24 horas</h3><p>Dia, noite, fim de semana e feriado. Sua clínica nunca mais aparece como indisponível.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">🗓️</div><h3>Agenda sempre organizada</h3><p>Consultas marcadas, confirmadas e remarcadas sozinhas, sincronizadas com o Google Agenda.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(250,204,21,.12)">🔔</div><h3>Menos faltas e cancelamentos</h3><p>Confirmações e lembretes automáticos reduzem as ausências e protegem o seu faturamento.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(167,139,250,.12)">🧘</div><h3>Recepção mais leve</h3><p>Sua equipe deixa de apagar incêndios no WhatsApp e cuida melhor de quem está na clínica.</p></div>
-      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(248,113,113,.12)">📈</div><h3>Mais consultas, mais receita</h3><p>Atender rápido converte mais. Cada paciente respondido na hora é uma agenda mais cheia.</p></div>
-    </div>
+    <p class="closing-line" style="margin-top:36px">Você dorme. Sua clínica continua atendendo.</p>
   </div>
 </section>
 
@@ -667,8 +700,8 @@
 <section class="wrap" style="padding-top:96px;padding-bottom:40px">
   <div class="section-head">
     <span class="kicker" style="color:#3ECF8E">Veja na prática</span>
-    <h2 class="section-title">Da conversa no WhatsApp à consulta no Google Agenda.</h2>
-    <p class="section-sub">O paciente só conversa. Todo o resto acontece sozinho — em tempo real.</p>
+    <h2 class="section-title">Da conversa no WhatsApp ao horário marcado na agenda.</h2>
+    <p class="section-sub">O paciente conversa com a IA, escolhe o melhor horário e o compromisso é registrado na agenda da clínica. Sem depender de uma troca interminável de mensagens com a recepção.</p>
   </div>
   <div class="flow-grid">
     <div class="flow-wa">
@@ -701,137 +734,63 @@
   </div>
 </section>
 
-<!-- ===== RESULTADOS (contadores dinâmicos) ===== -->
-<section class="results" id="resultados">
-  <div class="wrap results-inner">
+<!-- ===== AGENDA AO VIVO (Google Calendar) ===== -->
+<section class="livecal" id="agenda-ao-vivo">
+  <div class="wrap livecal-inner">
     <div class="section-head">
-      <span class="kicker">Resultados esperados</span>
-      <h2 class="section-title">O que muda quando ninguém mais fica sem resposta.</h2>
+      <span class="kicker" style="color:#3ECF8E">Prova em tempo real</span>
+      <h2 class="section-title" style="margin-top:14px">Veja os agendamentos acontecendo em tempo real</h2>
+      <p class="section-sub">Cada consulta marcada pelo agente é registrada automaticamente na agenda da clínica.</p>
     </div>
-    <div class="grid4" id="stats-grid">
-      <div class="stat-card">
-        <div class="stat-value" data-count="24" data-prefix="" data-suffix="h" data-decimals="0">0h</div>
-        <div class="stat-label">de atendimento, sem pausas nem folgas</div>
-        <div class="stat-bar"><span data-fill="100"></span></div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" data-count="30" data-prefix="&lt;" data-suffix="s" data-decimals="0" data-countdown="1">&lt;60s</div>
-        <div class="stat-label">para responder cada paciente</div>
-        <div class="stat-bar"><span data-fill="92"></span></div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" data-count="40" data-prefix="−" data-suffix="%" data-decimals="0">−0%</div>
-        <div class="stat-label">de faltas com confirmação automática</div>
-        <div class="stat-bar"><span data-fill="78"></span></div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" data-count="3" data-prefix="+" data-suffix="h" data-decimals="0">+0h</div>
-        <div class="stat-label">livres por dia para a sua recepção</div>
-        <div class="stat-bar"><span data-fill="65"></span></div>
-      </div>
-    </div>
-    <p class="results-note">*Estimativas médias observadas em clínicas que adotam atendimento imediato e agendamento automático.</p>
-  </div>
-</section>
 
-<!-- ===== DEPOIMENTOS ===== -->
-<section class="wrap" style="padding-top:96px;padding-bottom:30px">
-  <div class="section-head">
-    <span class="kicker" style="color:#3ECF8E">Prova social</span>
-    <h2 class="section-title">Quem já tem um Funcionário Digital não volta atrás.</h2>
-  </div>
-  <div class="grid3">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">Antes a gente respondia o WhatsApp quando dava. Hoje todo mundo é atendido na hora e a agenda vive cheia. Foi o melhor investimento do ano.</p>
-      <div class="testi-foot"><span class="testi-avatar" style="background:#16281F;color:#3ECF8E">HM</span><div><div class="testi-name">Dra. Helena Martins</div><div class="testi-role">Clínica Médica · São Paulo</div></div></div>
+    <div class="livecal-card">
+      <div class="livecal-bar">
+        <span class="panel-dot" style="background:#F87171"></span>
+        <span class="panel-dot" style="background:#FBBF24"></span>
+        <span class="panel-dot" style="background:#3ECF8E"></span>
+        <span class="livecal-bar-title">Agenda da Clínica</span>
+      </div>
+      <div class="livecal-pad">
+        <div class="livecal-badge"><span class="livecal-pulse"></span> Agenda sincronizada automaticamente</div>
+        <div class="livecal-frame">
+          <iframe id="livecal-iframe" src="https://calendar.google.com/calendar/embed?src=webtech.empreendimentos%40gmail.com&amp;ctz=America%2FSao_Paulo" title="Agenda da Clínica" loading="lazy"></iframe>
+        </div>
+        <div class="livecal-marks">
+          <span><b>✓</b> Agendamentos automáticos</span>
+          <span><b>✓</b> Atualização em tempo real</span>
+          <span><b>✓</b> Integração com Google Calendar</span>
+        </div>
+      </div>
     </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">Minha recepcionista parou de viver no sufoco. As confirmações são automáticas e as faltas caíram bastante. Parece que contratei mais uma pessoa.</p>
-      <div class="testi-foot"><span class="testi-avatar" style="background:#1C2620;color:#7DD3AE">RS</span><div><div class="testi-name">Dr. Rafael Souza</div><div class="testi-role">Consultório Odontológico</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="quote">Os pacientes elogiam a rapidez. Recebo mensagem às 23h e já está tudo respondido e agendado no dia seguinte quando chego.</p>
-      <div class="testi-foot"><span class="testi-avatar" style="background:#2A2418;color:#D9B370">CN</span><div><div class="testi-name">Camila Nogueira</div><div class="testi-role">Clínica de Estética · Curitiba</div></div></div>
+
+    <p class="livecal-quote">Seu paciente agenda pelo WhatsApp. A IA organiza o atendimento. <em>A consulta aparece automaticamente na agenda.</em></p>
+
+    <div class="livecal-ctas">
+      <a href="#experimentar" class="btn-ghost" style="font-size:16px;padding:15px 26px">↑ Voltar para a demonstração</a>
     </div>
   </div>
 </section>
 
-<!-- ===== COMPARATIVO ===== -->
-<section class="wrap" style="max-width:1080px;padding-top:80px;padding-bottom:30px">
-  <div class="section-head" style="margin-bottom:46px">
-    <span class="kicker" style="color:#3ECF8E">A diferença</span>
-    <h2 class="section-title">Recepção sozinha × Recepção com Funcionário Digital.</h2>
-  </div>
-  <div class="compare-grid">
-    <div class="compare-box compare-bad">
-      <h3><span class="compare-badge" style="background:rgba(248,113,113,.12);color:#F87171">✕</span> Só a recepção tradicional</h3>
-      <div class="compare-list" style="color:#8A8A8A">
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Mensagens respondidas só quando sobra tempo</div>
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> WhatsApp parado fora do horário comercial</div>
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Recepção dividida entre telefone, balcão e celular</div>
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Confirmações esquecidas e cadeiras vazias</div>
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Agenda confusa, com horários duplicados</div>
-        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Pacientes que desistem por demora na resposta</div>
-      </div>
-    </div>
-    <div class="compare-box compare-good">
-      <h3><span class="compare-badge" style="background:rgba(62,207,142,.14);color:#3ECF8E">✓</span> Com Funcionário Digital</h3>
-      <div class="compare-list" style="color:#D4D4D4;font-weight:500">
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Todo paciente respondido em segundos</div>
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Atendimento ativo 24 horas por dia, todo dia</div>
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Recepção focada em quem está na clínica</div>
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Confirmações e lembretes automáticos</div>
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Google Agenda sempre organizado e sincronizado</div>
-        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Mais agendamentos e nenhum paciente perdido</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="wrap" id="faq" style="max-width:820px;padding-top:90px;padding-bottom:30px">
-  <div class="section-head" style="margin-bottom:40px">
-    <span class="kicker" style="color:#3ECF8E">Dúvidas frequentes</span>
-    <h2 class="section-title" style="font-size:38px">Tudo o que você precisa saber.</h2>
-  </div>
-  <div id="faq-list">
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="true"><span>Preciso entender de tecnologia para usar?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Não. Cuidamos de toda a configuração para você. Funciona dentro do WhatsApp que a sua clínica já usa — você só acompanha as conversas e a agenda sendo preenchida.</p></div>
-    </div>
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="false"><span>O atendimento parece robótico?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Pelo contrário. As respostas são naturais, gentis e no tom da sua clínica. A maioria dos pacientes nem percebe que está sendo atendida por um assistente — só sente que foi atendida rápido e bem.</p></div>
-    </div>
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="false"><span>Funciona fora do horário comercial?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Sim. Ele atende 24 horas por dia, todos os dias, inclusive de madrugada, fins de semana e feriados. Nenhuma mensagem fica esperando até o dia seguinte.</p></div>
-    </div>
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="false"><span>Como ele organiza a agenda?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Ao marcar, confirmar ou remarcar uma consulta, ele atualiza o Google Agenda da clínica na hora — evitando horários duplicados e mantendo tudo sincronizado para toda a equipe.</p></div>
-    </div>
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="false"><span>E quando o paciente precisa falar com uma pessoa?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Sempre que o assunto for delicado ou específico, ele encaminha a conversa para a sua equipe de forma organizada. A tecnologia cuida do repetitivo; sua recepção cuida do que importa.</p></div>
-    </div>
-    <div class="faq-item">
-      <button type="button" class="faq-toggle" aria-expanded="false"><span>Serve para o meu tipo de atendimento?</span><span class="faq-sign">+</span></button>
-      <div class="faq-answer"><p>Sim. Atende clínicas e consultórios médicos, dentistas, psicólogos, nutricionistas, fisioterapeutas e clínicas de estética. Adaptamos as conversas à realidade da sua especialidade.</p></div>
-    </div>
-  </div>
-</section>
+<script>
+  /* Em telas pequenas, exibe a agenda em formato de lista (mais legivel no celular). */
+  (function () {
+    var f = document.getElementById('livecal-iframe');
+    if (!f) { return; }
+    var base = 'https://calendar.google.com/calendar/embed?src=webtech.empreendimentos%40gmail.com&ctz=America%2FSao_Paulo';
+    var w = window.innerWidth || document.documentElement.clientWidth;
+    if (w < 768) { f.src = base + '&mode=AGENDA'; }
+  })();
+</script>
 
 <!-- ===== BÔNUS: PAINEL DE GESTÃO ===== -->
 <section class="bonus" id="bonus">
   <div class="wrap bonus-inner">
     <div class="bonus-head">
-      <span class="bonus-tag">★ Bônus exclusivo</span>
-      <h2 class="section-title" style="margin-top:18px">Além do atendimento, você ganha o painel que mostra tudo.</h2>
-      <p class="section-sub">Toda conversa que a IA atende vira informação na sua mão: quantos pacientes chegaram, quantos viraram consulta, quais procedimentos mais pedem e o que está passando batido fora do horário. Com análises geradas por Inteligência Artificial e relatório em PDF para você acompanhar sua clínica sem planilha nenhuma.</p>
+      <span class="bonus-tag">★ Incluído como bônus</span>
+      <h2 class="section-title" style="margin-top:18px">E você ainda enxerga tudo o que está acontecendo no seu atendimento.</h2>
+      <p class="section-sub" style="color:#EDEDED;font-weight:600">O atendimento acontece automaticamente, mas você continua no controle.</p>
+      <p class="section-sub">Acompanhe quantos pacientes entraram em contato, quantos agendaram, quais procedimentos despertam mais interesse, quais horários concentram mais procura e quantas oportunidades chegaram fora do horário comercial.</p>
+      <p class="section-sub" style="color:#3ECF8E;font-weight:600">Não é apenas atendimento automático. É inteligência sobre o atendimento da sua clínica.</p>
     </div>
 
     <!-- Mockup do painel -->
@@ -964,76 +923,216 @@
     </div>
 
     <div class="bonus-perks">
-      <div class="perk"><h4>Você enxerga o dinheiro na mesa</h4><p>Descubra quantos pacientes chegam fora do horário — e quanto sua clínica deixava de faturar sem perceber.</p></div>
-      <div class="perk"><h4>A IA analisa por você</h4><p>Insights automáticos apontam o que melhorar na agenda, nos procedimentos e na conversão. Sem planilha.</p></div>
+      <div class="perk"><h4>Você enxerga as oportunidades que escapavam</h4><p>Veja quantos pacientes chegam fora do horário e quantos contatos ainda não viraram consulta.</p></div>
+      <div class="perk"><h4>A leitura dos dados é feita para você</h4><p>Insights automáticos apontam o que melhorar na agenda, nos procedimentos e na conversão. Sem planilha.</p></div>
       <div class="perk"><h4>Relatório pronto em PDF</h4><p>Um clique gera o relatório do período para você acompanhar, comparar e decidir com números reais.</p></div>
     </div>
 
     <div class="bonus-ctas">
-      <a href="https://dashboard.mentoriaglobal.com/" target="_blank" rel="noopener" class="btn-green" style="font-size:17px;padding:17px 32px">⧉ Ver Painel Bônus</a>
+      <a href="https://painel.mentoriaglobal.com/" target="_blank" rel="noopener" class="btn-green" style="font-size:17px;padding:17px 32px">⧉ Ver Painel Bônus</a>
     </div>
-    <p class="bonus-fine">Acesso de demonstração · Incluído sem custo para clientes do atendimento com IA</p>
+    <p class="bonus-fine">Painel de demonstração com dados ilustrativos · Incluído sem custo para clientes do atendimento com IA</p>
+
+    <div class="bonus-head" style="margin-top:64px">
+      <h2 class="section-title" style="font-size:32px">Quantos pacientes sua clínica pode estar deixando escapar?</h2>
+      <p class="section-sub">Imagine uma clínica recebendo 20 novos contatos por dia. Se apenas 2 oportunidades adicionais por dia forem convertidas em consultas:</p>
+    </div>
+    <div class="grid3" style="margin-top:28px">
+      <div class="kpi"><div class="kpi-t">Oportunidades recuperadas por dia</div><div class="kpi-v">2</div><div class="kpi-d">em 26 dias de atendimento</div></div>
+      <div class="kpi"><div class="kpi-t">Novos pacientes por mês</div><div class="kpi-v">52</div><div class="kpi-d">2 × 26 dias</div></div>
+      <div class="kpi"><div class="kpi-t">Com ticket médio hipotético de R$ 500</div><div class="kpi-v">R$ 26 mil</div><div class="kpi-d">em oportunidades adicionais</div></div>
+    </div>
+    <p class="bonus-fine" style="margin-top:20px">Exemplo meramente ilustrativo. Os resultados variam de acordo com o volume de contatos, ticket médio e taxa de conversão de cada clínica.</p>
+    <p class="livecal-quote" style="margin-top:26px">Quanto vale para sua clínica <em>recuperar apenas alguns pacientes</em> que hoje podem estar sendo perdidos?</p>
   </div>
 </section>
 
-<!-- ===== AGENDA AO VIVO (Google Calendar) ===== -->
-<section class="livecal" id="agenda-ao-vivo">
+<!-- ===== ROI: CUSTO DE NÃO RESPONDER ===== -->
+<section class="livecal" id="roi">
   <div class="wrap livecal-inner">
     <div class="section-head">
-      <span class="kicker" style="color:#3ECF8E">Prova em tempo real</span>
-      <h2 class="section-title" style="margin-top:14px">Veja os agendamentos acontecendo em tempo real</h2>
-      <p class="section-sub">Cada consulta marcada pelo agente é registrada automaticamente na agenda da clínica.</p>
+      <span class="kicker" style="color:#3ECF8E">O custo invisível</span>
+      <h2 class="section-title" style="margin-top:14px">Quanto custa para sua clínica não responder um paciente?</h2>
+      <p class="section-sub">Uma mensagem ignorada não parece uma grande perda. Mas multiplique isso por dezenas de contatos todos os meses.</p>
+      <p class="section-sub">Alguns desses contatos poderiam virar avaliações. Algumas avaliações poderiam virar tratamentos. E alguns tratamentos poderiam representar milhares de reais em faturamento.</p>
     </div>
+    <p class="livecal-quote" style="margin-top:36px">O Funcionário Digital não precisa trazer centenas de pacientes novos. <em>Basta ajudar sua clínica a aproveitar melhor os pacientes que já estão procurando por ela.</em></p>
+  </div>
+</section>
 
-    <div class="livecal-card">
-      <div class="livecal-bar">
-        <span class="panel-dot" style="background:#F87171"></span>
-        <span class="panel-dot" style="background:#FBBF24"></span>
-        <span class="panel-dot" style="background:#3ECF8E"></span>
-        <span class="livecal-bar-title">Agenda da Clínica</span>
-      </div>
-      <div class="livecal-pad">
-        <div class="livecal-badge"><span class="livecal-pulse"></span> Agenda sincronizada automaticamente</div>
-        <div class="livecal-frame">
-          <iframe id="livecal-iframe" src="https://calendar.google.com/calendar/embed?src=webtech.empreendimentos%40gmail.com&amp;ctz=America%2FSao_Paulo" title="Agenda da Clínica" loading="lazy"></iframe>
-        </div>
-        <div class="livecal-marks">
-          <span><b>✓</b> Agendamentos automáticos</span>
-          <span><b>✓</b> Atualização em tempo real</span>
-          <span><b>✓</b> Integração com Google Calendar</span>
-        </div>
-      </div>
+<!-- ===== BENEFÍCIOS ===== -->
+<section class="benefits">
+  <div class="wrap" style="padding-top:90px;padding-bottom:90px">
+    <div class="section-head">
+      <span class="kicker" style="color:#3ECF8E">O que a sua clínica ganha</span>
+      <h2 class="section-title">Benefícios que aparecem já na primeira semana.</h2>
     </div>
-
-    <p class="livecal-quote">Seu paciente agenda pelo WhatsApp. A IA organiza o atendimento. <em>A consulta aparece automaticamente na agenda.</em></p>
-
-    <div class="livecal-ctas">
-      <a href="#bonus" class="btn-ghost" style="font-size:16px;padding:15px 26px">↑ Voltar para a demonstração</a>
+    <div class="grid3">
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">⚡</div><h3>Mais pacientes atendidos</h3><p>Nenhum paciente precisa esperar até amanhã para receber uma primeira resposta.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(56,189,248,.12)">🌎</div><h3>Mais oportunidades aproveitadas</h3><p>Quem demonstra interesse recebe atenção enquanto ainda está interessado.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(62,207,142,.12)">🗓️</div><h3>Atendimento além do horário comercial</h3><p>Sua clínica continua disponível mesmo quando ninguém está na recepção.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(250,204,21,.12)">🔔</div><h3>Menos trabalho para sua equipe</h3><p>Sua recepção deixa de gastar tempo respondendo as mesmas perguntas todos os dias.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(167,139,250,.12)">🧘</div><h3>Mais organização</h3><p>Agendamentos e informações ficam centralizados, organizados e sempre na mesma agenda.</p></div>
+      <div class="benefit-card"><div class="benefit-icon" style="background:rgba(248,113,113,.12)">📈</div><h3>Mais controle</h3><p>O painel mostra exatamente o que está acontecendo com os atendimentos da sua clínica.</p></div>
     </div>
   </div>
 </section>
 
-<script>
-  /* Em telas pequenas, exibe a agenda em formato de lista (mais legivel no celular). */
-  (function () {
-    var f = document.getElementById('livecal-iframe');
-    if (!f) { return; }
-    var base = 'https://calendar.google.com/calendar/embed?src=webtech.empreendimentos%40gmail.com&ctz=America%2FSao_Paulo';
-    var w = window.innerWidth || document.documentElement.clientWidth;
-    if (w < 768) { f.src = base + '&mode=AGENDA'; }
-  })();
-</script>
+<!-- ===== RESULTADOS (contadores dinâmicos) ===== -->
+<section class="results" id="resultados">
+  <div class="wrap results-inner">
+    <div class="section-head">
+      <span class="kicker">Resultados esperados</span>
+      <h2 class="section-title">O que muda quando ninguém mais fica sem resposta.</h2>
+      <p class="section-sub">Números de referência do que a sua clínica ganha ao responder na hora.</p>
+    </div>
+    <div class="grid4" id="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" data-count="24" data-prefix="" data-suffix="h" data-decimals="0">0h</div>
+        <div class="stat-label">de atendimento, sem pausas nem folgas</div>
+        <div class="stat-bar"><span data-fill="100"></span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-count="30" data-prefix="&lt;" data-suffix="s" data-decimals="0" data-countdown="1">&lt;60s</div>
+        <div class="stat-label">para responder cada paciente</div>
+        <div class="stat-bar"><span data-fill="92"></span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-count="40" data-prefix="−" data-suffix="%" data-decimals="0">−0%</div>
+        <div class="stat-label">de faltas com confirmação e lembrete automáticos</div>
+        <div class="stat-bar"><span data-fill="78"></span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-count="3" data-prefix="+" data-suffix="h" data-decimals="0">+0h</div>
+        <div class="stat-label">livres por dia para a recepção cuidar de pacientes</div>
+        <div class="stat-bar"><span data-fill="65"></span></div>
+      </div>
+    </div>
+    <p class="results-note">*Estimativas médias observadas em clínicas que adotam atendimento imediato e agendamento automático.</p>
+  </div>
+</section>
+
+<!-- ===== PARA QUEM É ===== -->
+<section class="wrap" style="padding-top:96px;padding-bottom:20px">
+  <div class="section-head">
+    <span class="kicker" style="color:#3ECF8E">Para quem é</span>
+    <h2 class="section-title">Para clínicas que não querem mais perder pacientes por falta de resposta.</h2>
+  </div>
+  <div class="grid3">
+    <div class="card"><div class="card-icon" style="background:rgba(62,207,142,.12)">🔥</div><h3>Sua recepção vive sobrecarregada?</h3><p>Deixe a IA assumir as conversas repetitivas e liberar sua equipe para o atendimento presencial.</p></div>
+    <div class="card"><div class="card-icon" style="background:rgba(62,207,142,.12)">🌙</div><h3>Recebe mensagens fora do horário?</h3><p>Não deixe seu paciente esperando até o dia seguinte para receber uma primeira resposta.</p></div>
+    <div class="card"><div class="card-icon" style="background:rgba(62,207,142,.12)">📈</div><h3>Quer aumentar os agendamentos sem aumentar a equipe?</h3><p>Automatize a primeira etapa do atendimento e aproveite melhor cada contato que já chega.</p></div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="wrap" style="padding-top:96px;padding-bottom:30px">
+  <div class="section-head">
+    <span class="kicker" style="color:#3ECF8E">Prova social</span>
+    <h2 class="section-title">Quem já tem um Funcionário Digital não volta atrás.</h2>
+    <p class="section-sub">Clínicas que pararam de perder pacientes por falta de resposta.</p>
+  </div>
+  <div class="grid3">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">Antes a gente respondia o WhatsApp quando dava. Hoje todo mundo é atendido na hora e a agenda vive cheia. Foi o melhor investimento do ano.</p>
+      <div class="testi-foot"><span class="testi-avatar" style="background:#16281F;color:#3ECF8E">HM</span><div><div class="testi-name">Dra. Helena Martins</div><div class="testi-role">Clínica Médica · São Paulo</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">Minha recepcionista parou de viver no sufoco. As confirmações são automáticas e as faltas caíram bastante. Parece que contratei mais uma pessoa.</p>
+      <div class="testi-foot"><span class="testi-avatar" style="background:#1C2620;color:#7DD3AE">RS</span><div><div class="testi-name">Dr. Rafael Souza</div><div class="testi-role">Consultório Odontológico</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">Os pacientes elogiam a rapidez. Recebo mensagem às 23h e já está tudo respondido e agendado no dia seguinte quando chego.</p>
+      <div class="testi-foot"><span class="testi-avatar" style="background:#2A2418;color:#D9B370">CN</span><div><div class="testi-name">Camila Nogueira</div><div class="testi-role">Clínica de Estética · Curitiba</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARATIVO ===== -->
+<section class="wrap" style="max-width:1080px;padding-top:80px;padding-bottom:30px">
+  <div class="section-head" style="margin-bottom:46px">
+    <span class="kicker" style="color:#3ECF8E">A diferença</span>
+    <h2 class="section-title">Recepção sobrecarregada × Atendimento inteligente</h2>
+  </div>
+  <div class="compare-grid">
+    <div class="compare-box compare-bad">
+      <h3><span class="compare-badge" style="background:rgba(248,113,113,.12);color:#F87171">✕</span> Recepção sozinha, sem apoio</h3>
+      <div class="compare-list" style="color:#8A8A8A">
+        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Responde quando consegue</div>
+        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Depende do horário comercial</div>
+        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Pode esquecer mensagens</div>
+        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Gasta tempo com perguntas repetitivas</div>
+        <div class="compare-item"><span style="color:#F87171;font-weight:700;flex-shrink:0">✕</span> Tem dificuldade para acompanhar todos os contatos</div>
+      </div>
+    </div>
+    <div class="compare-box compare-good">
+      <h3><span class="compare-badge" style="background:rgba(62,207,142,.14);color:#3ECF8E">✓</span> Recepção com o Funcionário Digital</h3>
+      <div class="compare-list" style="color:#D4D4D4;font-weight:500">
+        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Responde em segundos</div>
+        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Disponível 24 horas</div>
+        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Conduz o paciente até o agendamento</div>
+        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Automatiza tarefas repetitivas</div>
+        <div class="compare-item"><span style="color:#3ECF8E;font-weight:700;flex-shrink:0">✓</span> Mostra os resultados no painel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="wrap" id="faq" style="max-width:820px;padding-top:90px;padding-bottom:30px">
+  <div class="section-head" style="margin-bottom:40px">
+    <span class="kicker" style="color:#3ECF8E">Dúvidas frequentes</span>
+    <h2 class="section-title" style="font-size:38px">As dúvidas que toda clínica tem antes de começar.</h2>
+  </div>
+  <div id="faq-list">
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="true"><span>A IA substitui minha secretária?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Não. Ela funciona como apoio à equipe, assumindo o atendimento repetitivo e permitindo que sua recepção se concentre nos pacientes e nas situações que realmente precisam de intervenção humana.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>Posso personalizar os procedimentos e valores?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Sim. A solução é configurada de acordo com as informações e regras da sua clínica — procedimentos, valores, formas de pagamento e o jeito de falar com o paciente.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>Posso definir os horários disponíveis?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Sim. O atendimento e os agendamentos seguem exatamente a disponibilidade configurada para a clínica.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>E se o paciente fizer uma pergunta que a IA não sabe responder?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>A automação pode ser configurada para identificar situações que precisam de atendimento humano e encaminhá-las para a equipe, de forma organizada.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>O paciente consegue reagendar ou cancelar?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Sim. Reagendamentos e cancelamentos podem ser resolvidos automaticamente pelo próprio WhatsApp, sem ocupar a recepção.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>Funciona fora do horário comercial?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Sim. Esse é justamente um dos principais benefícios: à noite, no fim de semana e nos feriados o paciente continua sendo atendido.</p></div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-toggle" aria-expanded="false"><span>O paciente realmente agenda na minha agenda?</span><span class="faq-sign">+</span></button>
+      <div class="faq-answer"><p>Sim. O sistema pode realizar todo o processo de agendamento e registrar o compromisso no Google Agenda da clínica.</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== CTA FINAL ===== -->
 <section class="wrap" style="padding-top:70px;padding-bottom:90px">
   <div class="cta-final">
     <div class="cta-badge">⚡ Vagas limitadas para implantação neste mês</div>
-    <h2>Cada dia sem atender é um paciente a menos. Comece hoje.</h2>
-    <p class="sub">Fale com a gente no WhatsApp e veja, em uma demonstração rápida, o seu Funcionário Digital atendendo como se fosse a sua própria recepção — e leve o painel de gestão como bônus.</p>
+    <h2>Enquanto você pensa, outro paciente pode estar esperando uma resposta.</h2>
+    <p class="sub">Descubra como sua clínica pode atender, informar e agendar pacientes automaticamente pelo WhatsApp.</p>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px">
-      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px"><span style="font-size:21px">✆</span> Veja agora</a>
+      <a href="https://wa.me/5511951010684?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica%20e%20os%20valores%20das%20consultas." target="_blank" rel="noopener" class="btn-green" style="font-size:18px;padding:18px 34px"><span style="font-size:21px">✆</span> Experimentar a IA no WhatsApp →</a>
     </div>
-    <p class="fine">Sem compromisso · Resposta na hora · Implantação simples</p>
+    <p class="fine" style="margin-top:26px;color:#A1A1A1">Prefere falar diretamente com alguém?</p>
+    <div style="display:flex;justify-content:center;margin-top:12px">
+      <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="btn-ghost" style="font-size:16px;padding:15px 26px">Falar com um especialista →</a>
+    </div>
+    <p class="fine">Sem compromisso · Atendimento humano para contratação</p>
   </div>
 </section>
 
@@ -1042,13 +1141,13 @@
   <div class="wrap footer-inner">
     <div class="footer-brand"><span class="brand-mark" style="width:34px;height:34px;border-radius:10px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#062616" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10.2" ry="4.4" transform="rotate(-28 12 12)"></ellipse><circle cx="12" cy="12" r="3" fill="#062616" stroke="none"></circle></svg></span> Mentor <span style="color:#3ECF8E">IA</span> Global</div>
     <p class="footer-note">Atendimento inteligente via WhatsApp para clínicas e profissionais da saúde.</p>
-    <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="footer-wa">✆ Falar no WhatsApp</a>
+    <a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" class="footer-wa">✆ Falar com um especialista</a>
   </div>
   <div class="copyright">© 2026 Mentor IA Global · mentoriaglobal.com · Todos os direitos reservados</div>
 </footer>
 
 <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
-<a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="wa-float">
+<a href="https://wa.me/5513996452577?text=Ol%C3%A1%2C%20Mentor%20IA%20Global!%20Tenho%20interesse%20em%20contratar%20o%20atendimento%20automatizado%20com%20IA%20para%20minha%20cl%C3%ADnica.%20Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20e%20os%20valores." target="_blank" rel="noopener" aria-label="Falar com um especialista" title="Falar com um especialista — atendimento comercial" class="wa-float">
   <svg viewBox="0 0 32 32" width="34" height="34" fill="#fff"><path d="M16 .4C7.2.4.4 7.2.4 16c0 2.9.8 5.6 2.1 8L.2 31.6l7.8-2.3A15.5 15.5 0 0 0 16 31.6C24.8 31.6 31.6 24.8 31.6 16S24.8.4 16 .4zm0 28.5c-2.6 0-5-.7-7.1-1.9l-.5-.3-4.6 1.3 1.3-4.5-.3-.5A12.8 12.8 0 0 1 3.2 16C3.2 8.9 8.9 3.2 16 3.2S28.8 8.9 28.8 16 23.1 28.9 16 28.9zm7.1-9.6c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"></path></svg>
 </a>
 
