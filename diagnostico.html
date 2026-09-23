@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Gerencial</title>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+  margin: 0;
+}
+
+#loading {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 18px;
+}
+
+#error {
+  display: none;
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#relatorio {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading">
+  Carregando diagnóstico...
+</div>
+
+<div id="error">
+  <h2>Diagnóstico não encontrado</h2>
+  <p>Verifique se o link está correto.</p>
+</div>
+
+<div id="relatorio"></div>
+
+<script>
+
+const SUPABASE_URL = "https://nhhcxkklaiozjkchwceb.supabase.co";
+
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5oaGN4a2tsYWlvemprY2h3Y2ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODkwNDQsImV4cCI6MjEwNTc2NTA0NH0.R6fcxWZH3jrm60kzD33f_NDeqkcWdHAsrlsnqg3zH5I";
+
+const params = new URLSearchParams(window.location.search);
+const leadId = params.get("id");
+
+async function carregarDiagnostico() {
+
+  if (!leadId) {
+    mostrarErro();
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/diagnosticos?lead_id=eq.${encodeURIComponent(leadId)}&publicado=eq.true&select=*`,
+      {
+        headers: {
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Erro ao consultar o Supabase");
+    }
+
+    const dados = await response.json();
+
+    if (!dados.length) {
+      mostrarErro();
+      return;
+    }
+
+    document.getElementById("loading").style.display = "none";
+
+    document.getElementById("relatorio").innerHTML =
+      dados[0].html_relatorio;
+
+    registrarAcesso(leadId);
+
+  } catch (erro) {
+
+    console.error(erro);
+    mostrarErro();
+
+  }
+
+}
+
+async function registrarAcesso(leadId) {
+
+  try {
+
+    await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/registrar_acesso_diagnostico`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+        },
+
+        body: JSON.stringify({
+          p_lead_id: leadId,
+          p_user_agent: navigator.userAgent,
+          p_referer: document.referrer || null
+        })
+
+      }
+    );
+
+  } catch (erro) {
+
+    console.error("Erro ao registrar acesso:", erro);
+
+  }
+
+}
+
+function mostrarErro() {
+
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("error").style.display = "block";
+
+}
+
+carregarDiagnostico();
+
+</script>
+
+</body>
+</html>
