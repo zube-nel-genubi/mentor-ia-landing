@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Diagnóstico Gerencial</title>
 
 <style>
@@ -56,12 +56,16 @@ body {
 
 <script>
 
-const SUPABASE_URL = "https://nhhcxkklaiozjkchwceb.supabase.co";
+var SUPABASE_URL = "https://nhhcxkklaiozjkchwceb.supabase.co";
 
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5oaGN4a2tsYWlvemprY2h3Y2ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODkwNDQsImV4cCI6MjEwNTc2NTA0NH0.R6fcxWZH3jrm60kzD33f_NDeqkcWdHAsrlsnqg3zH5I";
+var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5oaGN4a2tsYWlvemprY2h3Y2ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODkwNDQsImV4cCI6MjEwNTc2NTA0NH0.R6fcxWZH3jrm60kzD33f_NDeqkcWdHAsrlsnqg3zH5I";
 
-const params = new URLSearchParams(window.location.search);
-const leadId = params.get("id");
+var params = new URLSearchParams(window.location.search);
+var leadId = params.get("id");
+// preview=1 → abertura de conferência (não conta como clique)
+var modoPrevia = params.get("preview") === "1";
+// pdf=1 → abre a janela de "Salvar como PDF" automaticamente
+var modoPdf = params.get("pdf") === "1";
 
 async function carregarDiagnostico() {
 
@@ -72,12 +76,12 @@ async function carregarDiagnostico() {
 
   try {
 
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/diagnosticos?lead_id=eq.${encodeURIComponent(leadId)}&publicado=eq.true&select=*`,
+    var response = await fetch(
+      SUPABASE_URL + "/rest/v1/diagnosticos?lead_id=eq." + encodeURIComponent(leadId) + "&publicado=eq.true&select=lead_id,empresa_nome,html_relatorio",
       {
         headers: {
           "apikey": SUPABASE_ANON_KEY,
-          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+          "Authorization": "Bearer " + SUPABASE_ANON_KEY
         }
       }
     );
@@ -86,7 +90,7 @@ async function carregarDiagnostico() {
       throw new Error("Erro ao consultar o Supabase");
     }
 
-    const dados = await response.json();
+    var dados = await response.json();
 
     if (!dados.length) {
       mostrarErro();
@@ -98,7 +102,17 @@ async function carregarDiagnostico() {
     document.getElementById("relatorio").innerHTML =
       dados[0].html_relatorio;
 
-    registrarAcesso(leadId);
+    if (dados[0].empresa_nome) {
+      document.title = "Diagnóstico Gerencial — " + dados[0].empresa_nome;
+    }
+
+    if (!modoPrevia) {
+      registrarAcesso(leadId);
+    }
+
+    if (modoPdf) {
+      setTimeout(function () { window.print(); }, 1200);
+    }
 
   } catch (erro) {
 
@@ -114,14 +128,14 @@ async function registrarAcesso(leadId) {
   try {
 
     await fetch(
-      `${SUPABASE_URL}/rest/v1/rpc/registrar_acesso_diagnostico`,
+      SUPABASE_URL + "/rest/v1/rpc/registrar_acesso_diagnostico",
       {
         method: "POST",
 
         headers: {
           "Content-Type": "application/json",
           "apikey": SUPABASE_ANON_KEY,
-          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+          "Authorization": "Bearer " + SUPABASE_ANON_KEY
         },
 
         body: JSON.stringify({
