@@ -38,6 +38,42 @@ body {
   padding: 30px;
   box-sizing: border-box;
 }
+
+@page { size: A4; margin: 10mm; }
+
+@media print {
+  body { background: #fff !important; }
+  #loading, #error { display: none !important; }
+
+  #relatorio {
+    max-width: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* neutraliza alturas fixas vindas do n8n */
+  #relatorio * {
+    min-height: 0 !important;
+    box-shadow: none !important;
+  }
+  #relatorio [class*="page"], #relatorio [class*="pagina"] {
+    height: auto !important;
+    page-break-after: always;
+    break-inside: avoid;
+  }
+  #relatorio [class*="page"]:last-child,
+  #relatorio [class*="pagina"]:last-child { page-break-after: auto; }
+
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+
+  
+
+
+
+  
 </style>
 </head>
 
