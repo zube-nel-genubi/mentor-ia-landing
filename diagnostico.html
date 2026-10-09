@@ -43,22 +43,35 @@ body {
   @media print {
   @page { size: A4; margin: 8mm; }
   html { zoom: 1 !important; }
+  body { background: #fff !important; }
   #loading, #error { display: none !important; }
-  #relatorio { padding: 0 !important; min-height: 0 !important; max-width: none !important; }
+  #relatorio { padding: 0 !important; min-height: 0 !important; max-width: none !important; zoom: .8; }
 
+  /* fluxo contínuo: sem quebra forçada entre seções */
+  #relatorio .mig { padding: 0 !important; }
   #relatorio .mig .pg {
     display: block !important;
     min-height: 0 !important;
-    page-break-after: auto !important;
-    break-after: auto !important;
+    margin: 0 0 6mm !important;
+    box-shadow: none !important;
+    page-break-before: auto !important; break-before: auto !important;
+    page-break-after: auto !important;  break-after: auto !important;
   }
-  /* cada seção começa em folha nova, sem gerar folha vazia no fim */
-  #relatorio .mig .pg + .pg { page-break-before: always; break-before: page; }
+  #relatorio .mig .pg + .pg { page-break-before: auto !important; break-before: auto !important; }
   #relatorio .mig .pg-body { flex: none !important; }
+
+  /* não cortar blocos no meio e não deixar título sozinho no pé da folha */
+  #relatorio .mig h2 { break-after: avoid; page-break-after: avoid; }
+  #relatorio .mig .hero, #relatorio .mig .sol-hero, #relatorio .mig .topbar,
+  #relatorio .mig .kpis, #relatorio .mig .score-row, #relatorio .mig .two,
+  #relatorio .mig .voice, #relatorio .mig .swot, #relatorio .mig .feat,
+  #relatorio .mig .vs, #relatorio .mig .hours, #relatorio .mig .ovt,
+  #relatorio .mig .price, #relatorio .mig .cta, #relatorio .mig .dark,
+  #relatorio .mig .funnel, #relatorio .mig .shots, #relatorio .mig .pareto,
+  #relatorio .mig tr, #relatorio .mig .opps li {
+    break-inside: avoid; page-break-inside: avoid;
+  }
 }
-
-  
-
 
 
   
