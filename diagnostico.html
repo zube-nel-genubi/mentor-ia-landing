@@ -39,35 +39,23 @@ body {
   box-sizing: border-box;
 }
 
-@page { size: A4; margin: 10mm; }
 
-@media print {
-  body { background: #fff !important; }
+  @media print {
+  @page { size: A4; margin: 8mm; }
+  html { zoom: 1 !important; }
   #loading, #error { display: none !important; }
+  #relatorio { padding: 0 !important; min-height: 0 !important; max-width: none !important; }
 
-  #relatorio {
-    max-width: none !important;
+  #relatorio .mig .pg {
+    display: block !important;
     min-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    page-break-after: auto !important;
+    break-after: auto !important;
   }
-
-  /* neutraliza alturas fixas vindas do n8n */
-  #relatorio * {
-    min-height: 0 !important;
-    box-shadow: none !important;
-  }
-  #relatorio [class*="page"], #relatorio [class*="pagina"] {
-    height: auto !important;
-    page-break-after: always;
-    break-inside: avoid;
-  }
-  #relatorio [class*="page"]:last-child,
-  #relatorio [class*="pagina"]:last-child { page-break-after: auto; }
-
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  /* cada seção começa em folha nova, sem gerar folha vazia no fim */
+  #relatorio .mig .pg + .pg { page-break-before: always; break-before: page; }
+  #relatorio .mig .pg-body { flex: none !important; }
 }
-
 
   
 
