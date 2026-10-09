@@ -39,43 +39,24 @@ body {
   box-sizing: border-box;
 }
 
-
-  @media print {
-  @page { size: A4; margin: 8mm; }
-  html { zoom: 1 !important; }
-  body { background: #fff !important; }
-  #loading, #error { display: none !important; }
-  #relatorio { padding: 0 !important; min-height: 0 !important; max-width: none !important; zoom: .8; }
-
-  /* fluxo contínuo: sem quebra forçada entre seções */
-  #relatorio .mig { padding: 0 !important; }
-  #relatorio .mig .pg {
-    display: block !important;
-    min-height: 0 !important;
-    margin: 0 0 6mm !important;
-    box-shadow: none !important;
-    page-break-before: auto !important; break-before: auto !important;
-    page-break-after: auto !important;  break-after: auto !important;
-  }
-  #relatorio .mig .pg + .pg { page-break-before: auto !important; break-before: auto !important; }
-  #relatorio .mig .pg-body { flex: none !important; }
-
-  /* não cortar blocos no meio e não deixar título sozinho no pé da folha */
-  #relatorio .mig h2 { break-after: avoid; page-break-after: avoid; }
-  #relatorio .mig .hero, #relatorio .mig .sol-hero, #relatorio .mig .topbar,
-  #relatorio .mig .kpis, #relatorio .mig .score-row, #relatorio .mig .two,
-  #relatorio .mig .voice, #relatorio .mig .swot, #relatorio .mig .feat,
-  #relatorio .mig .vs, #relatorio .mig .hours, #relatorio .mig .ovt,
-  #relatorio .mig .price, #relatorio .mig .cta, #relatorio .mig .dark,
-  #relatorio .mig .funnel, #relatorio .mig .shots, #relatorio .mig .pareto,
-  #relatorio .mig tr, #relatorio .mig .opps li {
-    break-inside: avoid; page-break-inside: avoid;
-  }
+/* Aviso exibido enquanto o PDF é gerado */
+#gerando-pdf {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 42, 71, .85);
+  color: #fff;
+  font: 600 16px Arial, Helvetica, sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
-
-
-  
 </style>
+
+<!-- Gera o PDF por código (não depende da tela de impressão do celular) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -89,6 +70,8 @@ body {
   <p>Verifique se o link está correto.</p>
 </div>
 
+<div id="gerando-pdf">Gerando o PDF...<br>Aguarde alguns segundos.</div>
+
 <div id="relatorio"></div>
 
 <script>
@@ -101,8 +84,11 @@ var params = new URLSearchParams(window.location.search);
 var leadId = params.get("id");
 // preview=1 → abertura de conferência (não conta como clique)
 var modoPrevia = params.get("preview") === "1";
-// pdf=1 → abre a janela de "Salvar como PDF" automaticamente
+// pdf=1 → gera e baixa o PDF automaticamente
 var modoPdf = params.get("pdf") === "1";
+
+var nomeEmpresa = "";
+var gerandoPdf = false;
 
 async function carregarDiagnostico() {
 
@@ -139,8 +125,16 @@ async function carregarDiagnostico() {
     document.getElementById("relatorio").innerHTML =
       dados[0].html_relatorio;
 
-    if (dados[0].empresa_nome) {
-      document.title = "Diagnóstico Gerencial — " + dados[0].empresa_nome;
+    nomeEmpresa = dados[0].empresa_nome || "";
+
+    if (nomeEmpresa) {
+      document.title = "Diagnóstico Gerencial — " + nomeEmpresa;
+    }
+
+    // O botão "Baixar PDF" do relatório passa a gerar o PDF por código
+    var btn = document.querySelector("#relatorio .print-btn");
+    if (btn) {
+      btn.onclick = function () { gerarPdf(nomeEmpresa); };
     }
 
     if (!modoPrevia) {
@@ -148,7 +142,7 @@ async function carregarDiagnostico() {
     }
 
     if (modoPdf) {
-      setTimeout(function () { window.print(); }, 1200);
+      setTimeout(function () { gerarPdf(nomeEmpresa); }, 1200);
     }
 
   } catch (erro) {
@@ -157,6 +151,55 @@ async function carregarDiagnostico() {
     mostrarErro();
 
   }
+
+}
+
+function gerarPdf(nome) {
+
+  if (gerandoPdf) return;
+
+  // Se a biblioteca não carregou, cai na impressão normal
+  if (typeof html2pdf === "undefined") {
+    window.print();
+    return;
+  }
+
+  var alvo = document.querySelector("#relatorio .mig") || document.getElementById("relatorio");
+  var btn = document.querySelector("#relatorio .print-btn");
+  var aviso = document.getElementById("gerando-pdf");
+
+  gerandoPdf = true;
+  if (btn) btn.style.display = "none";
+  aviso.style.display = "flex";
+  alvo.style.width = "820px"; // força o layout de computador
+
+  var nomeArquivo = "Diagnostico - " + (nome || "clinica").replace(/[\\/:*?"<>|]/g, "") + ".pdf";
+
+  var finalizar = function () {
+    alvo.style.width = "";
+    if (btn) btn.style.display = "";
+    aviso.style.display = "none";
+    gerandoPdf = false;
+  };
+
+  html2pdf().set({
+    margin: 0,
+    filename: nomeArquivo,
+    image: { type: "jpeg", quality: 0.95 },
+    html2canvas: { scale: 2, useCORS: true, windowWidth: 820, scrollY: 0 },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    pagebreak: {
+      mode: ["css"],
+      before: ".pg + .pg",
+      avoid: [".kpis", ".score-row", ".two", ".voice", ".swot", ".feat", ".vs",
+              ".hours", ".ovt", ".price", ".cta", ".dark", ".funnel", ".shots",
+              ".pareto", "tr", ".opps li", "h2"]
+    }
+  }).from(alvo).save().then(finalizar).catch(function (erro) {
+    console.error("Erro ao gerar PDF:", erro);
+    finalizar();
+    window.print();
+  });
 
 }
 
