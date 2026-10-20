@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Prévia do site</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fa;color:#1f2937;margin:0}
+#loading{text-align:center;padding:80px 20px;font-size:18px}
+#error{display:none;max-width:700px;margin:80px auto;padding:30px;background:#fff;border-radius:10px;text-align:center}
+</style>
+</head>
+<body>
+<div id="loading">Carregando a prévia do site...</div>
+<div id="error"><h2>Prévia não encontrada</h2><p>Verifique se o link está correto.</p></div>
+<script>
+// Mesma base do diagnostico.html: busca o HTML no Supabase (tabela diagnosticos) pelo ?id=
+// Diferença: o site tem scripts (menu, animações, antes/depois), então a página inteira é substituída
+// pelo HTML do site (document.write), em vez de usar innerHTML (que não executa scripts).
+var SUPABASE_URL = "https://nhhcxkklaiozjkchwceb.supabase.co";
+var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5oaGN4a2tsYWlvemprY2h3Y2ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODkwNDQsImV4cCI6MjEwNTc2NTA0NH0.R6fcxWZH3jrm60kzD33f_NDeqkcWdHAsrlsnqg3zH5I";
+
+var params = new URLSearchParams(window.location.search);
+var leadId = params.get("id");
+var modoPrevia = params.get("preview") === "1"; // abertura de conferência (não conta como clique)
+
+function mostrarErro() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("error").style.display = "block";
+}
+
+function registrarAcesso(id) {
+  try {
+    var corpo = JSON.stringify({ p_lead_id: id, p_user_agent: navigator.userAgent, p_referer: document.referrer || null });
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/registrar_acesso_diagnostico", {
+      method: "POST", keepalive: true,
+      headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": "Bearer " + SUPABASE_ANON_KEY },
+      body: corpo
+    }).catch(function (e) { console.error("Erro ao registrar acesso:", e); });
+  } catch (e) { console.error(e); }
+}
+
+(async function () {
+  if (!leadId) return mostrarErro();
+  try {
+    var r = await fetch(
+      SUPABASE_URL + "/rest/v1/diagnosticos?lead_id=eq." + encodeURIComponent(leadId) + "&publicado=eq.true&select=lead_id,empresa_nome,html_relatorio",
+      { headers: { "apikey": SUPABASE_ANON_KEY, "Authorization": "Bearer " + SUPABASE_ANON_KEY } }
+    );
+    if (!r.ok) throw new Error("Erro ao consultar o Supabase");
+    var dados = await r.json();
+    if (!dados.length || !dados[0].html_relatorio) return mostrarErro();
+    if (!modoPrevia) registrarAcesso(leadId);
+    var html = dados[0].html_relatorio;
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (e) {
+    console.error(e);
+    mostrarErro();
+  }
+})();
+</script>
+</body>
+</html>
